@@ -23,7 +23,6 @@ env:
 
 jobs:
   build:
-
     runs-on: ubuntu-latest
     permissions:
       contents: read
@@ -71,7 +70,7 @@ jobs:
       - name: Build and push
         uses: docker/build-push-action@v6
         with:
-            platforms: linux/amd64,linux/arm64
+            platforms: linux/arm64
             context: ./bitlychee/jmeter/
             push: true
             tags: ${{ steps.meta.outputs.tags }}
